@@ -26,8 +26,8 @@ jobs:
         name: Client Docker
         uses: docker/build-push-action@v3
         with:
-          context: ./client
-          file: ./Dockerfile.dev
+          context: client
+          file: client/Dockerfile.dev
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/react-test:latest
       -
         name: Client Test
@@ -37,31 +37,31 @@ jobs:
         name: Build and push Client
         uses: docker/build-push-action@v3
         with:
-          context: ./client
-          file: ./Dockerfile
+          context: client
+          file: client/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/multi-client:latest
       -
         name: Build and push Nginx
         uses: docker/build-push-action@v3
         with:
-          context: ./nginx
-          file: ./Dockerfile
+          context: nginx
+          file: nginx/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/multi-nginx:latest
       -
         name: Build and push Server
         uses: docker/build-push-action@v3
         with:
-          context: ./server
-          file: ./Dockerfile
+          context: server
+          file: server/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/multi-server:latest
       -
         name: Build and push Worker
         uses: docker/build-push-action@v3
         with:
-          context: ./worker
-          file: ./Dockerfile
+          context: worker
+          file: worker/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/multi-worker:latest
