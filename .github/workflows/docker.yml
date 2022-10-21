@@ -30,13 +30,6 @@ jobs:
           file: client/Dockerfile.dev
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/react-test:latest
       -
-        name: Client Test
-        uses: docker/build-push-action@v3
-        with:
-          context: client
-          file: client/Dockerfile.dev
-          run: docker run -e CI=true ${{ secrets.DOCKER_HUB_USERNAME }}/react-test npm test
-      -
         name: Build and push Client
         uses: docker/build-push-action@v3
         with:
