@@ -35,8 +35,7 @@ jobs:
         with:
           context: client
           file: client/Dockerfile.dev
-        run: |
-          docker run -e CI=true ${{ secrets.DOCKER_HUB_USERNAME }}/react-test npm test
+          run: docker run -e CI=true ${{ secrets.DOCKER_HUB_USERNAME }}/react-test npm test
       -
         name: Build and push Client
         uses: docker/build-push-action@v3
