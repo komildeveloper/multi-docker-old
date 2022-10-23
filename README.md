@@ -1,6 +1,6 @@
 ## Technologies
 
-* JavaScript
+* JavaScript - React.js
 * Node.js
 * Express.js
 * Postgres
