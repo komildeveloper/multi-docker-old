@@ -2,7 +2,6 @@
 
 ## Technologies
 
-### Technologies
 ***JavaScript*** \
 ***Nodejs*** \
 ***Express.js*** \
